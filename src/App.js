@@ -95,8 +95,8 @@ export default class App extends Component {
   }
 
   hover(){
-    //this.clearMove();
-    moves:clearInterval(this.state.moves);
+    this.clearMove();
+    //moves:clearInterval(this.state.moves);
     this.setState({
           hover: true
     })
@@ -116,7 +116,7 @@ export default class App extends Component {
   }
   //停止之后 在自动
   changeColor(value){
-    if ((value === this.state.number) && !this.state.flag ) {
+    if ((value === this.state.number) && !this.state.flag&&!this.state.hover ) {
       this.move()
     }
   }
